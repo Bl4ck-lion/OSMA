@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,225 +8,235 @@
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
-    height: .1rem;
-    width: .5rem;
+::-webkit-scrollbar {
+    height: 0.1rem;
+    width: 0.5rem;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: #67ccff;
     border-radius: 5rem;
 }
 
-::-webkit-slider-thumb{
+::-webkit-slider-thumb {
     background-color: #194eb9;
     border-radius: 5rem;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #1d002c;
     color: #fff;
     overflow-x: hidden;
 }
 
-header{
-    padding: 25px 10%;
-    position : absolute;
+header {
+    padding: 25px 5%;
+    position: fixed;
     left: 0;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    z-index: 1001;
+    z-index: 1007; /* Pastikan z-index lebih tinggi dari elemen lainnya */
+    background-color: rgba(29, 0, 44, 0.9); /* Background semi-transparent saat scroll */
 }
 
-.logo{
-    font-size: 2rem;
+.logo {
+    font-size: 1.5rem;
     color: #12f7ff;
     text-decoration: none;
     font-weight: 600;
 }
 
-ul.navlist{
+ul.navlist {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
-.navlist li{
-    margin-left: 1rem;
-}
-
-.navlist li a{
+.navlist li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
-    padding: 5px 12px;
+    font-size: 0.9rem;
+    padding: 5px 10px;
     border: 2px solid #12f7ff;
-    border-radius: 25px ;
-    transition: all .3s ease ;
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
 .navlist li a:hover,
-.navlist li a.active{
+.navlist li a.active {
     box-shadow: 0 0 1rem #12f7ff;
     background: #12f7ff;
     color: #1d002c;
 }
 
-section{
+section {
     min-height: 100vh;
+    padding-top: 100px;
 }
 
-.parallax-home{
+.parallax-home {
     position: relative;
     display: flex;
+    overflow-x: hidden;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1002;
 }
 
-.parallax-home img{
+.parallax-home img {
     position: absolute;
     object-fit: cover;
     pointer-events: none;
+    width: 100%;
+    z-index: 0;
+    height: auto;
 }
 
-.parallax-home #text{
+.parallax-home #text {
     position: absolute;
-    font-size: 2.5rem ;
-    text-shadow: 0 10px 4px rgba(0,0,0,0.85);
-    top: 80%;
-    left:3%
+    font-size: 1.5rem;
+    text-shadow: 0 10px 4px rgba(0, 0, 0, 0.85);
+    top: 70%;
+    left: 5%;
+    width: 90%;
+    z-index: 1004; 
+    text-align: center;
 }
 
-.parallax-home img#moon,.about img#desert-moon{
-    mix-blend-mode: screen;
-}
-
-.about{
+.about {
     position: relative;
+    z-index: 1; /* Pastikan z-index lebih rendah dari header */
 }
 
-.about img{
+
+.about img {
     position: absolute;
-    z-index: 1000;
     object-fit: cover;
     pointer-events: none;
+    width: 100%;
+    height: auto;
 }
 
-.about img .about-waterfall{
-    position: absolute;
-    top: -95px;
-}
-
-.about .info-box{
-    position: absolute;
-    top: 0%;
-    left: 10%;
-    width: 50%;
-    z-index: 1003;
+.about .info-box {
+    position: relative;
+    z-index: 1000;
     background: #1d002c;
+    padding: 20px;
+    z-index: 4;
+    border-radius: 10px;
 }
 
-.about .info-box h2{
-    font-size: 2.5rem;
+.about .info-box h2 {
+    font-size: 1.8rem;
+    z-index: 2;
 }
 
-.about .info-box p{
+.about .info-box p {
     margin-bottom: 1.5rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    z-index: 2;
 }
 
-.btn{
+.btn {
     background: #12f7ff;
     color: #1d002c;
     text-decoration: none;
     border-radius: 25px;
-    padding: .5rem 1rem;
-    transition: all .3s ease;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
     border: 2px solid #12f7ff;
     font-weight: 500;
 }
 
-.btn:hover{
+.btn:hover {
     box-shadow: 0 0 1rem #12f7ff;
     background: #1d002c;
     color: #12f7ff;
 }
 
-.product{
+.product {
+    position: relative;
     background: #121137;
-    padding: 3rem 10%; 
+    padding: 50px 5%; /* Pastikan ada cukup padding di bagian atas */
+    margin-top: 400px; /* Tambahkan margin-top untuk memastikan bagian ini berada di bawah "About" */
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
 }
 
-.product h2{
-    font-size: 2rem;
+
+.product h2 {
+    font-size: 1.8rem;
     padding: 2rem 0 1rem 0;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
-.product-card{
+.product-card {
     display: flex;
-    align-items:stretch ;
+    align-items: stretch;
     justify-content: center;
     gap: 1rem;
-
+    flex-wrap: wrap;
 }
 
-.card{
+.card {
     padding: 1rem;
     border: 2px solid #12f7ff;
     text-align: center;
     border-radius: 25px;
     display: block;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
     z-index: 999;
+    max-width: 300px;
+    width: 100%;
 }
 
-.card:hover{
+.card:hover {
     cursor: pointer;
     transform: translateY(-7px);
 }
 
-.card img{
-    width: 150px;
-    height: 150px;
-    margin-top: -4rem;
-    filter: drop-shadow(0 0 0.5 #1797ff)
+.card img {
+    width: 100px;
+    height: auto;
+    margin-top: -3rem;
+    filter: drop-shadow(0 0 0.5rem #1797ff);
 }
 
-.card .price-name{
+.card .price-name {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.info{
-    padding-bottom: .5rem;
+.info {
+    padding-bottom: 0.5rem;
 }
 
-.info p{
-    padding: .5rem 0 1.5rem 0;
+.info p {
+    padding: 0.5rem 0 1.5rem 0;
 }
 
-.info .btn{
+.info .btn {
     display: block;
     width: 60%;
     margin: auto;
 }
 
-.price-name span{
+.price-name span {
     color: #04cf37;
-    font-size: 500;
+    font-weight: 500;
 }
 
-#progress{
-    position: fixed ;
-    /* background-color: #194eb9; */
+#progress {
+    position: fixed;
     z-index: 1000;
     bottom: 60px;
     right: 10px;
@@ -238,13 +248,65 @@ section{
     cursor: pointer;
 }
 
-#progress-value{
+#progress-value {
     display: block;
     height: calc(100% - 12px);
-    width : calc(100% - 12px);
+    width: calc(100% - 12px);
     background: #fff;
     border-radius: 50%;
     display: grid;
     place-items: center;
     font-size: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 3%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navlist li a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .parallax-home #text {
+        font-size: 1.2rem;
+        top: 60%;
+    }
+
+    .about .info-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .about .info-box p {
+        font-size: 0.9rem;
+    }
+
+    .product {
+        margin-top: 0px; /* Mengurangi margin-top untuk layar HP */
+    }
+
+    .product h2 {
+        font-size: 1.5rem;
+    }
+    
+    .product-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+        margin-top: -2rem;
+    }
 }
